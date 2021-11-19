@@ -192,7 +192,7 @@ export class LiveStreaming extends cdk.Stack {
                         'mediastore:ListItems',
                         'mediastore:PutObject'
                     ]
-                }),
+                }),                
                 new iam.PolicyStatement({
                     resources: [`arn:${cdk.Aws.PARTITION}:ssm:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:parameter/*`],
                     actions: [
@@ -233,7 +233,8 @@ export class LiveStreaming extends cdk.Stack {
                         'medialive:deleteInputSecurityGroup',
                         'medialive:describeChannel',
                         'medialive:startChannel',
-                        'medialive:tagResource'
+                        'medialive:tagResource',
+                        'medialive:CreateTags',
                     ]
                 }),
                 new iam.PolicyStatement({
